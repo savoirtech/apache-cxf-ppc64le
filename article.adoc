@@ -28,6 +28,10 @@ a| image::./assets/images/power.png[alt=power]
 | ARM cores providing reduced instruction sets. Efficient and Perforamnce cores available on some implementations.
 | POWER cores with optional use of SMT4 or SMT8 for greater thread count.
 
+| Mobile, Desktop, and Server oriented.
+| Mobile oriented, with Server implementations becoming more common.
+| Workstation, Server oriented.
+
 |===
 
 
