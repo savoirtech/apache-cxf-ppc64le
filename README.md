@@ -6,7 +6,7 @@ alt="POWER" />
 </figure>
 
 The upcoming release of Apache CXF 4.1 will establish strong build and
-runtime compatibility with JVMs running Linux on POWER.  
+runtime compatibility with JVMs running Linux on POWER.
 
 ## So which JVMs has Apache CXF been curated to work well upon PPC64LE?
 
@@ -16,7 +16,7 @@ runtime compatibility with JVMs running Linux on POWER.  
 
 - RedHat OpenJDK
 
-These are the three distributions which provide PPC64LE support. 
+These are the three distributions which provide PPC64LE support.
 
 Asoprium Eclipse Temurin and RedHat OpenJDK are both OpenJDK based, with
 IBM Semuru using OpenJ9.
@@ -48,7 +48,7 @@ implementations.</p></td>
 <td style="text-align: left;"><p>ARM cores providing reduced instruction
 sets. Efficient and Perforamnce cores available on some
 implementations.</p></td>
-<td style="text-align: left;"><p>POWER cores with optional use of SMT4
+<td style="text-align: left;"><p>PPC64LE cores with optional use of SMT4
 or SMT8 for greater thread count.</p></td>
 </tr>
 <tr>
@@ -61,7 +61,47 @@ implementations becoming more common.</p></td>
 </tbody>
 </table>
 
+In the case of our lab PPC64LE machine, its a Raptor Computing Systems'
+Blackbird running an IBM POWER9 v2 CPU on CentOS Stream 9.
+
+- 8 cores per package
+
+  - 3.45GHz base / 3.8GHz turbo (WoF)
+
+  - 160W TDP
+
+  - All Core Turbo capable
+
+  - 32KB L1 data cache + 32KB L1 instruction cache / core
+
+  - 512KB unpaired L2 cache / core
+
+  - 10MB unpaired L3 cache / core
+
+- 14nm FinFET process
+
+- SMT4 capable
+
+- POWER IOMMU
+
+- Hardware virtualization extensions
+
+- Ultravisor functionality
+
+- Hardware watchpoint support
+
+CentOS Stream 9 is run in little Endian mode (the LE in PPC64LE), as are
+the JVMs.
+
 ## Let’s take a look through the journey towards stable support.
+
+Our journey began with a project to record our internal lab build
+results on each [Apache CXF
+release](https://github.com/savoirtech/apache-cxf-report). It quickly
+became clear that there were issues in obtaining a full clean build of
+the project. We began the process of addressing these issues with the
+community. As we assisted in making the require changes, we endevoured
+to ensure other platform/JVMs were not affected.
 
 | Jira Entry | Errata |
 |----|----|
@@ -74,7 +114,7 @@ implementations becoming more common.</p></td>
 | [org.apache.cxf.systest.ws.action.SignatureWhitespaceTest test fail on RH OpenJDK.](https://issues.apache.org/jira/browse/CXF-9014) | Certificated used in the system test was updated from 1024-bit RSA key (weak) to RSA 2048/sha256. |
 
 In our builds towards stable PPC64LE support, Apache CXF 4.1 will ship
-with its internal performance script.  Using this script we’ve been able
+with its internal performance script. Using this script we’ve been able
 to run JAX-RS, and JAX-WS workflows to help stress the JVM, and identify
 runtime issues.
 
