@@ -1,6 +1,6 @@
 == Apache CXF on PPC64LE
 
-image::./assets/images/raptor-computing-systems-blackbird-power.png[]
+image::./assets/images/raptor-computing-systems-blackbird-power.jpg[]
 
 The upcoming release of Apache CXF 4.1  will establish strong build and runtime compatibility with JVMs running Linux on POWER.  
 
