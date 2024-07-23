@@ -2,7 +2,7 @@
 
 image::./assets/images/raptor-computing-systems-blackbird-power.png[alt=POWER,width=480,height=640,align="center"]
 
-The upcoming release of Apache CXF 4.1 will establish strong build and runtime compatibility with JVMs running Linux on POWER.  
+The upcoming release of Apache CXF 4.1 will establish strong build and runtime compatibility with JVMs running Linux on POWER.
 
 === So which JVMs has Apache CXF been curated to work well upon PPC64LE? 
 
@@ -11,7 +11,7 @@ The upcoming release of Apache CXF 4.1 will establish strong build and runtime c
 * RedHat OpenJDK
 
 
-These are the three distributions which provide PPC64LE support. 
+These are the three distributions which provide PPC64LE support.
 
 Asoprium Eclipse Temurin and RedHat OpenJDK are both OpenJDK based, with IBM Semuru using OpenJ9. 
 
@@ -36,7 +36,7 @@ a| image::./assets/images/power.png[alt=power]
 
 In the case of our lab PPC64LE machine, its a Raptor Computing Systems' Blackbird running an IBM POWER9 v2 CPU on CentOS Stream 9.
 
-IBM POWER9 v2 CPU (8-Core)
+.IBM POWER9 v2 CPU (8-Core)
 * 8 cores per package
 ** 3.45GHz base / 3.8GHz turbo (WoF)
 ** 160W TDP
@@ -87,7 +87,7 @@ Our journey began with a project to record our internal lab build results on eac
 
 
 
-In our builds towards stable PPC64LE support, Apache CXF 4.1 will ship with its internal performance script.  Using this script we’ve been able to run JAX-RS, and JAX-WS workflows to help stress the JVM, and identify runtime issues.
+In our builds towards stable PPC64LE support, Apache CXF 4.1 will ship with its internal performance script. Using this script we’ve been able to run JAX-RS, and JAX-WS workflows to help stress the JVM, and identify runtime issues.
 
 
 
