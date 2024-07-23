@@ -42,26 +42,25 @@ a| image::./assets/images/power.png[alt=power]
 | Jira Entry | Errata
 
 | https://issues.apache.org/jira/browse/CXF-8994[CorbaConduitTest no longer requires IBM JDK destination activation routine.]
-| placeholder
+| Older versions of IBM Java would require destinations to be activated ahead of test cases, that is no longer the case, as such we removed this behavoir.
 
 | https://issues.apache.org/jira/browse/CXF-8996[JAXRS Bean introspection utility Beanspector relies on Class.getMethods natural order.]
-| placeholder
+| We discovered that JAXRS Bean introspection utility Beanspector relies on Class.getMethods natural order. For most JVMs the Beanspector Tests will pass, however IBM Semeru does not return methods in the same ordering. Note: Class.getMethods does not provide a prescribed ordering of methods. We applied ordering to methods such that all JVMs tested would achieve the same results.
 
 | https://issues.apache.org/jira/browse/CXF-8997[AbstractSTSTokenTest and TransportBindingTests no longer need to set https protocol to TLSv1 on IBM Java.]
-| placeholder
+| IBM JDKs disable TLSv1 by default since around Java 8 (https://community.ibm.com/community/user/wasdevops/blogs/hiroko-takamiya1/2021/06/19/ibm-java-80630-disables-tlsv1-tlsv11-by-default-ho). Removing the test case IBM control flag allows the default TLS to pass the tests.
 
 | https://issues.apache.org/jira/browse/CXF-8999[KerberosTokenTest testKerberosViaCustomTokenAction should not run on IBM Java.]
-
-| placeholder
+| The test case fails on ClassNotFound com.ibm.security.jgss.InquireType - this is thrown due to wss4j-ws-security-common having a hard coded check for IBM Java to use the above mentioned class. A future improvement would be to update wss4j-ws-security-common to be IBM Semeru friendly, then update CXF accordingly.
 
 | https://issues.apache.org/jira/browse/CXF-9002[JAXRSMultithreadedClientTest test cases failing on IBM JDK.]
-| placeholder
+| This is was addressed via updates for Multi threading stability in other cards. 
 
 | https://issues.apache.org/jira/browse/CXF-9006[TrustedAuthorityValidatorCRLTest#testIsCertChainValid fails when using Red Hat OpenJDK on PPC64LE.]
-| placeholder
+| This card required updating the certificates stored in the system tests folder.
 
 | https://issues.apache.org/jira/browse/CXF-9014[org.apache.cxf.systest.ws.action.SignatureWhitespaceTest test fail on RH OpenJDK.]
-| placeholder
+| Certificated used in the system test was updated from 1024-bit RSA key (weak) to RSA 2048/sha256.
 
 |===
 
