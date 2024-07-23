@@ -37,6 +37,7 @@ a| image::./assets/images/power.png[alt=power]
 
 === Let’s take a look through the journey towards stable support.
 
+[%autowidth]
 [cols="1,1"]
 |===
 | Jira Entry | Errata
