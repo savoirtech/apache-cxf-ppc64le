@@ -20,9 +20,13 @@ Asoprium Eclipse Temurin and RedHat OpenJDK are both OpenJDK based, with IBM Sem
 [cols="1,1,1"]
 |===
 
-| image::./assets/images/x64.png[alt=x64]
-| image::./assets/images/arm.png[alt=arm]
-| image::./assets/images/power.png[alt=power]
+a| image::./assets/images/x64.png[alt=x64]
+a| image::./assets/images/arm.png[alt=arm]
+a| image::./assets/images/power.png[alt=power]
+
+| x86-64 instruction set, commonly supporting SMT, Efficient and Perforamnce cores available on some implementations.
+| ARM cores providing reduced instruction sets. Efficient and Perforamnce cores available on some implementations.
+| POWER cores with optional use of SMT4 or SMT8 for greater thread count.
 
 |===
 
