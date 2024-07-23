@@ -20,9 +20,9 @@ Asoprium Eclipse Temurin and RedHat OpenJDK are both OpenJDK based, with IBM Sem
 [cols="1,1,1"]
 |===
 
-| image::./assets/images/x64.jpg[alt=x64]
-| image::./assets/images/arm.jpg[alt=arm]
-| image::./assets/images/ppc64le.jpg[alt=power]
+| image::./assets/images/x64.png[alt=x64]
+| image::./assets/images/arm.png[alt=arm]
+| image::./assets/images/power.png[alt=power]
 
 |===
 
