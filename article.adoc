@@ -57,8 +57,7 @@ CentOS Stream 9 is run in little Endian mode (the LE in PPC64LE), as are the JVM
 
 Our journey began with a project to record our internal lab build results on each https://github.com/savoirtech/apache-cxf-report[Apache CXF release]. It quickly became clear that there were issues in obtaining a full clean build of the project. We began the process of addressing these issues with the community. As we assisted in making the require changes, we endevoured to ensure other platform/JVMs were not affected. 
 
-[%autowidth]
-[cols="1,1"]
+[cols="1,1",width=75%]
 |===
 | Jira Entry | Errata
 
