@@ -1,7 +1,8 @@
 == Apache CXF on PPC64LE
 
-The upcoming release of Apache CXF 4.1  will establish strong build and runtime compatibility with JVMs running Linux on POWER.  
+image::./assets/images/raptor-computing-systems-blackbird-power.png[]
 
+The upcoming release of Apache CXF 4.1  will establish strong build and runtime compatibility with JVMs running Linux on POWER.  
 
 === So which JVMs has Apache CXF been curated to work well upon PPC64LE? 
 
@@ -10,7 +11,9 @@ The upcoming release of Apache CXF 4.1  will establish strong build and runtime 
 * RedHat OpenJDK
 
 
-These are the three distributions which provide PPC64LE support.  
+These are the three distributions which provide PPC64LE support. 
+
+Asoprium Eclipse Temurin and RedHat OpenJDK are both OpenJDK based, with IBM Semuru using OpenJ9. 
 
 
 === Let’s take a look through the journey towards stable support.
