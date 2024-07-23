@@ -3,7 +3,7 @@
 The upcoming release of Apache CXF 4.1  will establish strong build and runtime compatibility with JVMs running Linux on POWER.  
 
 
-=== So which JVMs has Apache CXF been curated to work well upon? 
+=== So which JVMs has Apache CXF been curated to work well upon PPC64LE? 
 
 * Adoptium Eclipse Temurin
 * IBM Semeru
