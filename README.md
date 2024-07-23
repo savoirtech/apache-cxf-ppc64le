@@ -1,7 +1,7 @@
 # Apache CXF on PPC64LE
 
 <figure>
-<img src="./assets/images/raptor-computing-systems-blackbird-power.jpg"
+<img src="./assets/images/raptor-computing-systems-blackbird-power.png"
 alt="POWER" />
 </figure>
 
