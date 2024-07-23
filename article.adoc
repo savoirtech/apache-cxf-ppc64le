@@ -26,7 +26,7 @@ a| image::./assets/images/power.png[alt=power]
 
 | x86-64 instruction set, commonly supporting SMT, Efficient and Perforamnce cores available on some implementations.
 | ARM cores providing reduced instruction sets. Efficient and Perforamnce cores available on some implementations.
-| POWER cores with optional use of SMT4 or SMT8 for greater thread count.
+| PPC64LE cores with optional use of SMT4 or SMT8 for greater thread count.
 
 | Mobile, Desktop, and Server oriented.
 | Mobile oriented, with Server implementations becoming more common.
@@ -34,8 +34,28 @@ a| image::./assets/images/power.png[alt=power]
 
 |===
 
+In the case of our lab PPC64LE machine, its a Raptor Computing Systems' Blackbird running an IBM POWER9 v2 CPU on CentOS Stream 9.
+
+IBM POWER9 v2 CPU (8-Core)
+* 8 cores per package
+** 3.45GHz base / 3.8GHz turbo (WoF)
+** 160W TDP
+** All Core Turbo capable
+** 32KB L1 data cache + 32KB L1 instruction cache / core
+** 512KB unpaired L2 cache / core
+** 10MB unpaired L3 cache / core
+* 14nm FinFET process
+* SMT4 capable
+* POWER IOMMU
+* Hardware virtualization extensions
+* Ultravisor functionality
+* Hardware watchpoint support
+
+CentOS Stream 9 is run in little Endian mode (the LE in PPC64LE), as are the JVMs. 
 
 === Let’s take a look through the journey towards stable support.
+
+Our journey began with a project to record our internal lab build results on each https://github.com/savoirtech/apache-cxf-report[Apache CXF release]. It quickly became clear that there were issues in obtaining a full clean build of the project. We began the process of addressing these issues with the community. As we assisted in making the require changes, we endevoured to ensure other platform/JVMs were not affected. 
 
 [%autowidth]
 [cols="1,1"]
