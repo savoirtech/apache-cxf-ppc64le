@@ -134,6 +134,14 @@ with its internal performance script. Using this script we’ve been able
 to run JAX-RS, and JAX-WS workflows to help stress the JVM, and identify
 runtime issues.
 
+## Conclusion
+
+The above Jira entries have been merged into Apache CXF 4.1.0-SNAPSHOT,
+and we continue to monitor for regressions. Historical build results
+from lab can be accessed via [our Apache CXF Report github
+repo](https://github.com/savoirtech/apache-cxf-report), just check your
+version in the branch drop down.
+
 ## Reaching Out
 
 Please do not hesitate to reach out with questions and comments, here on
