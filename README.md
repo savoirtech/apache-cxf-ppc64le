@@ -27,7 +27,7 @@ From the point of view of JAVA code there is no expected difference -
 write once, run everywhere is an aspect of Java development that we have
 come to expect.
 
-From the point of view of a Runtime Environment there are difference -
+From the point of view of a Runtime Environment there are differences -
 most of those are due to JVM defaults, however there are some cases
 where native behavoirs come into play. Each library/framework upon
 discovering these differences tend to adapt their code to ensure
@@ -39,6 +39,8 @@ to x64/ARM based systems, PPC64LE exposes developers to a reduced
 instruction set, more hardware threads, and larger caches - in Java this
 expresses itself as more resources (SMT4/8 making core counts appear
 much larger).
+
+## CPU Quick Comparison
 
 <table>
 <colgroup>

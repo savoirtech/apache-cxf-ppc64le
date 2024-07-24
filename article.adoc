@@ -23,6 +23,8 @@ From the point of view of a Runtime Environment there are differences - most of 
 
 As part of an OpenPower deployment users are seeking to gain improvements from an open ecosystem down to the hardware level. Compared to x64/ARM based systems, PPC64LE exposes developers to a reduced instruction set, more hardware threads, and larger caches - in Java this expresses itself as more resources (SMT4/8 making core counts appear much larger).
 
+=== CPU Quick Comparison
+
 [cols="1,1,1"]
 |===
 
