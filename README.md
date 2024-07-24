@@ -18,7 +18,7 @@ runtime compatibility with JVMs running Linux on POWER.
 
 These are the three distributions which provide PPC64LE support.
 
-Asoprium Eclipse Temurin and RedHat OpenJDK are both OpenJDK based, with
+Adoptium Eclipse Temurin and RedHat OpenJDK are both OpenJDK based, with
 IBM Semuru using OpenJ9.
 
 ## What is special about running on PPC64LE?

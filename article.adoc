@@ -13,7 +13,7 @@ The upcoming release of Apache CXF 4.1 will establish strong build and runtime c
 
 These are the three distributions which provide PPC64LE support.
 
-Asoprium Eclipse Temurin and RedHat OpenJDK are both OpenJDK based, with IBM Semuru using OpenJ9.
+Adoptium Eclipse Temurin and RedHat OpenJDK are both OpenJDK based, with IBM Semuru using OpenJ9.
 
 === What is special about running on PPC64LE?
 
