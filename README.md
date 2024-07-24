@@ -142,6 +142,11 @@ from lab can be accessed via [our Apache CXF Report github
 repo](https://github.com/savoirtech/apache-cxf-report), just check your
 version in the branch drop down.
 
+# About the Authors
+
+[Jamie
+Goodyear](https://github.com/savoirtech/blogs/blob/main/authors/JamieGoodyear.md)
+
 ## Reaching Out
 
 Please do not hesitate to reach out with questions and comments, here on

@@ -98,6 +98,10 @@ In our builds towards stable PPC64LE support, Apache CXF 4.1 will ship with its 
 
 The above Jira entries have been merged into Apache CXF 4.1.0-SNAPSHOT, and we continue to monitor for regressions. Historical build results from lab can be accessed via https://github.com/savoirtech/apache-cxf-report[our Apache CXF Report github repo], just check your version in the branch drop down.
 
+== About the Authors
+
+link:https://github.com/savoirtech/blogs/blob/main/authors/JamieGoodyear.md[Jamie Goodyear]
+
 === Reaching Out
 
 Please do not hesitate to reach out with questions and comments, here on the Blog, or through the Savoir Technologies website at https://www.savoirtech.com.
