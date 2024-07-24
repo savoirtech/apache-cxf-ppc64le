@@ -116,7 +116,7 @@ results on each [Apache CXF
 release](https://github.com/savoirtech/apache-cxf-report). It quickly
 became clear that there were issues in obtaining a full clean build of
 the project. We began the process of addressing these issues with the
-community. As we assisted in making the require changes, we endevoured
+community. As we assisted in making the required changes, we endevoured
 to ensure other platform/JVMs were not affected.
 
 | Jira Entry | Errata |
