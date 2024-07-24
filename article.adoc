@@ -4,7 +4,7 @@ image::./assets/images/raptor-computing-systems-blackbird-power.png[alt=POWER,wi
 
 The upcoming release of Apache CXF 4.1 will establish strong build and runtime compatibility with JVMs running Linux on POWER.
 
-=== So which JVMs has Apache CXF been curated to work well upon PPC64LE? 
+=== So which JVMs has Apache CXF been curated to work well upon PPC64LE?
 
 * Adoptium Eclipse Temurin
 * IBM Semeru
@@ -13,7 +13,7 @@ The upcoming release of Apache CXF 4.1 will establish strong build and runtime c
 
 These are the three distributions which provide PPC64LE support.
 
-Asoprium Eclipse Temurin and RedHat OpenJDK are both OpenJDK based, with IBM Semuru using OpenJ9. 
+Asoprium Eclipse Temurin and RedHat OpenJDK are both OpenJDK based, with IBM Semuru using OpenJ9.
 
 === What is special about running on PPC64LE?
 
@@ -51,36 +51,36 @@ In the case of our lab PPC64LE machine, its a Raptor Computing Systems' Blackbir
 * Ultravisor functionality
 * Hardware watchpoint support
 
-CentOS Stream 9 is run in little Endian mode (the LE in PPC64LE), as are the JVMs. 
+CentOS Stream 9 is run in little Endian mode (the LE in PPC64LE), as are the JVMs.
 
 === Let’s take a look through the journey towards stable support.
 
-Our journey began with a project to record our internal lab build results on each https://github.com/savoirtech/apache-cxf-report[Apache CXF release]. It quickly became clear that there were issues in obtaining a full clean build of the project. We began the process of addressing these issues with the community. As we assisted in making the require changes, we endevoured to ensure other platform/JVMs were not affected. 
+Our journey began with a project to record our internal lab build results on each https://github.com/savoirtech/apache-cxf-report[Apache CXF release]. It quickly became clear that there were issues in obtaining a full clean build of the project. We began the process of addressing these issues with the community. As we assisted in making the require changes, we endevoured to ensure other platform/JVMs were not affected.
 
-[cols="1,1",width=75%]
+[cols="1,4"]
 |===
 | Jira Entry | Errata
 
-| https://issues.apache.org/jira/browse/CXF-8994[CorbaConduitTest no longer requires IBM JDK destination activation routine.]
-| Older versions of IBM Java would require destinations to be activated ahead of test cases, that is no longer the case, as such we removed this behavoir.
+| CXF-8994
+| https://issues.apache.org/jira/browse/CXF-8994[CorbaConduitTest no longer requires IBM JDK destination activation routine.] Older versions of IBM Java would require destinations to be activated ahead of test cases, that is no longer the case, as such we removed this behavoir.
 
-| https://issues.apache.org/jira/browse/CXF-8996[JAXRS Bean introspection utility Beanspector relies on Class.getMethods natural order.]
-| We discovered that JAXRS Bean introspection utility Beanspector relies on Class.getMethods natural order. For most JVMs the Beanspector Tests will pass, however IBM Semeru does not return methods in the same ordering. Note: Class.getMethods does not provide a prescribed ordering of methods. We applied ordering to methods such that all JVMs tested would achieve the same results.
+| CXF-8996
+| https://issues.apache.org/jira/browse/CXF-8996[JAXRS Bean introspection utility Beanspector relies on Class.getMethods natural order.] We discovered that JAXRS Bean introspection utility Beanspector relies on Class.getMethods natural order. For most JVMs the Beanspector Tests will pass, however IBM Semeru does not return methods in the same ordering. Note: Class.getMethods does not provide a prescribed ordering of methods. We applied ordering to methods such that all JVMs tested would achieve the same results.
 
-| https://issues.apache.org/jira/browse/CXF-8997[AbstractSTSTokenTest and TransportBindingTests no longer need to set https protocol to TLSv1 on IBM Java.]
-| IBM JDKs disable TLSv1 by default since around Java 8 (https://community.ibm.com/community/user/wasdevops/blogs/hiroko-takamiya1/2021/06/19/ibm-java-80630-disables-tlsv1-tlsv11-by-default-ho). Removing the test case IBM control flag allows the default TLS to pass the tests.
+| CXF-8997
+| https://issues.apache.org/jira/browse/CXF-8997[AbstractSTSTokenTest and TransportBindingTests no longer need to set https protocol to TLSv1 on IBM Java.] IBM JDKs disable TLSv1 by default since around Java 8 (https://community.ibm.com/community/user/wasdevops/blogs/hiroko-takamiya1/2021/06/19/ibm-java-80630-disables-tlsv1-tlsv11-by-default-ho). Removing the test case IBM control flag allows the default TLS to pass the tests.
 
-| https://issues.apache.org/jira/browse/CXF-8999[KerberosTokenTest testKerberosViaCustomTokenAction should not run on IBM Java.]
-| The test case fails on ClassNotFound com.ibm.security.jgss.InquireType - this is thrown due to wss4j-ws-security-common having a hard coded check for IBM Java to use the above mentioned class. A future improvement would be to update wss4j-ws-security-common to be IBM Semeru friendly, then update CXF accordingly.
+| CXF-8999
+| https://issues.apache.org/jira/browse/CXF-8999[KerberosTokenTest testKerberosViaCustomTokenAction should not run on IBM Java.] The test case fails on ClassNotFound com.ibm.security.jgss.InquireType - this is thrown due to wss4j-ws-security-common having a hard coded check for IBM Java to use the above mentioned class. A future improvement would be to update wss4j-ws-security-common to be IBM Semeru friendly, then update CXF accordingly.
 
-| https://issues.apache.org/jira/browse/CXF-9002[JAXRSMultithreadedClientTest test cases failing on IBM JDK.]
-| This is was addressed via updates for Multi threading stability in other cards. 
+| CXF-9002
+| https://issues.apache.org/jira/browse/CXF-9002[JAXRSMultithreadedClientTest test cases failing on IBM JDK.] This is was addressed via updates for Multi threading stability in other cards.
 
-| https://issues.apache.org/jira/browse/CXF-9006[TrustedAuthorityValidatorCRLTest#testIsCertChainValid fails when using Red Hat OpenJDK on PPC64LE.]
-| This card required updating the certificates stored in the system tests folder.
+| CXF-9006
+| https://issues.apache.org/jira/browse/CXF-9006[TrustedAuthorityValidatorCRLTest#testIsCertChainValid fails when using Red Hat OpenJDK on PPC64LE.]. This card required updating the certificates stored in the system tests folder.
 
-| https://issues.apache.org/jira/browse/CXF-9014[org.apache.cxf.systest.ws.action.SignatureWhitespaceTest test fail on RH OpenJDK.]
-| Certificated used in the system test was updated from 1024-bit RSA key (weak) to RSA 2048/sha256.
+| CXF-9014
+| https://issues.apache.org/jira/browse/CXF-9014[org.apache.cxf.systest.ws.action.SignatureWhitespaceTest test fail on RH OpenJDK.]. Certificated used in the system test was updated from 1024-bit RSA key (weak) to RSA 2048/sha256.
 
 |===
 
