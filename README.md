@@ -23,6 +23,23 @@ IBM Semuru using OpenJ9.
 
 ## What is special about running on PPC64LE?
 
+From the point of view of JAVA code there is no expected difference -
+write once, run everywhere is an aspect of Java development that we have
+come to expect.
+
+From the point of view of a Runtime Environment there are difference -
+most of those are due to JVM defaults, however there are some cases
+where native behavoirs come into play. Each library/framework upon
+discovering these differences tend to adapt their code to ensure
+consistent runtimes.
+
+As part of an OpenPower deployment users are seeking to gain
+improvements from an open ecosystem down to the hardware level. Compared
+to x64/ARM based systems, PPC64LE exposes developers to a reduced
+instruction set, more hardware threads, and larger caches - in Java this
+expresses itself as more resources (SMT4/8 making core counts appear
+much larger).
+
 <table>
 <colgroup>
 <col style="width: 33%" />
@@ -30,6 +47,11 @@ IBM Semuru using OpenJ9.
 <col style="width: 33%" />
 </colgroup>
 <tbody>
+<tr>
+<td style="text-align: left;"><p>x86-64</p></td>
+<td style="text-align: left;"><p>ARM</p></td>
+<td style="text-align: left;"><p>PPC64LE</p></td>
+</tr>
 <tr>
 <td style="text-align: left;"><figure>
 <img src="./assets/images/x64.png" alt="x64" />
@@ -81,14 +103,6 @@ Blackbird running an IBM POWER9 v2 CPU on CentOS Stream 9.
 - 14nm FinFET process
 
 - SMT4 capable
-
-- POWER IOMMU
-
-- Hardware virtualization extensions
-
-- Ultravisor functionality
-
-- Hardware watchpoint support
 
 CentOS Stream 9 is run in little Endian mode (the LE in PPC64LE), as are
 the JVMs.
